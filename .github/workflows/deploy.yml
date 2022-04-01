@@ -29,6 +29,6 @@ jobs:
             password: ${{ secrets.TENCENT_CLOUD_SECRET_KEY}}
             port: 22
             script: |
-              docker pull ziminga/ziming-blog
+              docker pull ziminga/zdocs:${{github.event.commits[0].id}}
               kubectl set image deployments/zdocs zdocs=ziminga/zdocs:${{github.event.commits[0].id}}
 
